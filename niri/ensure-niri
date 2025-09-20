@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+user_home=$(bash -c "cd ~$(printf %q "$USER") && pwd")
+configfile="$user_home/.config/niri/config.kdl"
+if [ ! -L ${configfile} ] && [ -f ${configfile} ] ; then
+	echo Backing up existin config to $configfile.bak
+	mv $configfile $configfile.bak
+	echo Linking 
+	ln -s $user_home/dotfiles/niri/config.kdl $configfile	
+fi
+if [ ! -f ${configfile} ]; then
+	echo Linking 
+	ln -s $user_home/dotfiles/niri/config.kdl $configfile
+fi
