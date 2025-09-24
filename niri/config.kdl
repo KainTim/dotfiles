@@ -63,6 +63,11 @@ input {
     // focus-follows-mouse max-scroll-amount="0%"
 }
 
+cursor {
+    xcursor-theme "Adwaita"
+    xcursor-size 24
+}
+
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".
@@ -323,6 +328,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "iwqt"
+spawn-at-startup "nm-applet"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
 // If the client will specifically ask for CSD, the request will be honored.
@@ -413,6 +419,7 @@ binds {
     // Suggested binds for running programs: terminal, app launcher, screen locker.
     Mod+T hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
     F12 hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
+    Mod+Return hotkey-overlay-title="Open a Terminal: Kitty" { spawn "kitty"; }
     Mod+E hotkey-overlay-title="Open an Application: Dolphin" { spawn "dolphin"; }
     Mod+D hotkey-overlay-title="Run an Application: fuzzel" { spawn "fuzzel"; }
     Super+Alt+L hotkey-overlay-title="Lock the Screen: swaylock" { spawn "swaylock"; }
@@ -437,12 +444,12 @@ binds {
     Mod+Q { close-window; }
 
     Mod+Left  { focus-column-left; }
-    Mod+Down  { focus-window-down; }
-    Mod+Up    { focus-window-up; }
+    Mod+Down  { focus-window-or-workspace-down; }
+    Mod+Up    { focus-window-or-workspace-up; }
     Mod+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
-    Mod+J     { focus-window-down; }
-    Mod+K     { focus-window-up; }
+    Mod+J     { focus-window-or-workspace-down; }
+    Mod+K     { focus-window-or-workspace-up; }
     Mod+L     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
