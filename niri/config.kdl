@@ -327,7 +327,6 @@ layout {
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
-spawn-at-startup "iwqt"
 spawn-at-startup "nm-applet"
 
 // Uncomment this line to ask the clients to omit their client-side decorations if possible.
@@ -444,18 +443,26 @@ binds {
     Mod+Q { close-window; }
 
     Mod+Left  { focus-column-left; }
+    Mod5+Left  { focus-column-left; }
     Mod+Down  { focus-window-or-workspace-down; }
+    Mod5+Down  { focus-window-or-workspace-down; }
     Mod+Up    { focus-window-or-workspace-up; }
+    Mod5+Up    { focus-window-or-workspace-up; }
     Mod+Right { focus-column-right; }
+    Mod5+Right { focus-column-right; }
     Mod+H     { focus-column-left; }
     Mod+J     { focus-window-or-workspace-down; }
     Mod+K     { focus-window-or-workspace-up; }
     Mod+L     { focus-column-right; }
 
     Mod+Ctrl+Left  { move-column-left; }
+    Mod5+Ctrl+Left  { move-column-left; }
     Mod+Ctrl+Down  { move-column-to-workspace-down; }
+    Mod5+Ctrl+Down  { move-column-to-workspace-down; }
     Mod+Ctrl+Up    { move-column-to-workspace-up; }
+    Mod5+Ctrl+Up    { move-column-to-workspace-up; }
     Mod+Ctrl+Right { move-column-right; }
+    Mod5+Ctrl+Right { move-column-right; }
     Mod+Ctrl+H     { move-column-left; }
     Mod+Ctrl+J     { move-window-down; }
     Mod+Ctrl+K     { move-window-up; }
